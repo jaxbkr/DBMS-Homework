@@ -1,0 +1,70 @@
+
+TABLE_NAME   TABLE_TYPE                                                         
+------------ -----------                                                        
+CUSTOMERS    TABLE                                                              
+FURNITURE    TABLE                                                              
+RENTALS      TABLE                                                              
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ C_ID                                      NOT NULL NUMBER
+ NAME                                      NOT NULL VARCHAR2(10)
+ PHONE                                              VARCHAR2(13)
+ EMAIL                                              VARCHAR2(15)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ F_ID                                      NOT NULL NUMBER
+ CATEGORY                                  NOT NULL VARCHAR2(20)
+ STYLE                                              VARCHAR2(15)
+ PRICE                                     NOT NULL NUMBER(5,2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ C_ID                                               NUMBER
+ F_ID                                               NUMBER
+ CK_OUT_DATE                               NOT NULL DATE
+ RET_DATE                                           DATE
+
+
+OWNER        TABLE_NAME   PRIMARY_KEY  CONSTRAINT_NAME                          
+------------ ------------ ------------ ------------------------------           
+DBCLASS2     FURNITURE    F_ID         SYS_C007477                              
+DBCLASS2     CUSTOMERS    C_ID         SYS_C007479                              
+
+
+OWNER        TABLE_NAME   FOREIGN_KEY  REFERRING_TABLE PRIMARY_KEY              
+------------ ------------ ------------ --------------- ------------             
+DBCLASS2     RENTALS      C_ID         CUSTOMERS       C_ID                     
+DBCLASS2     RENTALS      F_ID         FURNITURE       F_ID                     
+
+
+OWNER        TABLE_NAME   SEARCH_CONDITION                                      
+------------ ------------ ---------------------------------------------         
+DBCLASS2     RENTALS      "CK_OUT_DATE" IS NOT NULL                             
+DBCLASS2     CUSTOMERS    "NAME" IS NOT NULL                                    
+DBCLASS2     FURNITURE    "CATEGORY" IS NOT NULL                                
+DBCLASS2     FURNITURE    style IN ('modern', 'rustic', 'traditional')          
+DBCLASS2     FURNITURE    "PRICE" IS NOT NULL                                   
+
+
+      C_ID NAME       PHONE         EMAIL                                       
+---------- ---------- ------------- ---------------                             
+         1 Alice      479-123-4567  alice@mail.com                              
+         2 Bob        479-234-5678  bob@mail.com                                
+         3 Carol      479-345-6789  carol@mail.com                              
+
+
+      F_ID CATEGORY             STYLE                PRICE                      
+---------- -------------------- --------------- ----------                      
+       101 Chair                modern               49.99                      
+       102 Table                rustic               199.5                      
+       103 Sofa                 traditional            599                      
+
+
+      C_ID       F_ID CK_OUT_DA RET_DATE                                        
+---------- ---------- --------- ---------                                       
+         1        101 20-JUN-25 13-SEP-25                                       
+         2        102 02-AUG-25 02-SEP-25                                       
+         3        103 13-SEP-25                                                 
+
