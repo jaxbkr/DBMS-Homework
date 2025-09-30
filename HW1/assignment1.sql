@@ -25,24 +25,40 @@ CREATE TABLE Customers (
 -- Create Rentals Table
 
 CREATE TABLE Rentals (
-  c_id NUMBER,
-  f_id NUMBER,
+  c_id NUMBER NOT NULL,
+  f_id NUMBER NOT NULL,
   ck_out_date DATE NOT NULL,
   ret_date DATE,
   CONSTRAINT fk_customer FOREIGN KEY (c_id)
   REFERENCES Customers(c_id),
   CONSTRAINT fk_furniture FOREIGN KEY (f_id)
-  REFERENCES Furniture(f_id)
+  REFERENCES Furniture(f_id),
+  CONSTRAINT pk_rentals PRIMARY KEY (c_id, f_id)
 );
 
 -- Insert customers
 INSERT INTO Customers VALUES (1, 'Alice', '479-123-4567', 'alice@mail.com');
 INSERT INTO Customers VALUES (2, 'Bob', '479-234-5678', 'bob@mail.com');
 INSERT INTO Customers VALUES (3, 'Carol', '479-345-6789', 'carol@mail.com');
+INSERT INTO Customers VALUES (4, 'Jackson', '479-345-4789', 'jackson@mail.com');
+INSERT INTO Customers VALUES (5, 'David', '479-345-6589', 'david@mail.com');
+INSERT INTO Customers VALUES (6, 'Saul', '479-375-6789', 'saul@mail.com');
+INSERT INTO Customers VALUES (7, 'Solomon', '479-333-6789', 'solomon@mail.com');
+INSERT INTO Customers VALUES (8, 'Daniel', '479-345-6439', 'daniel@mail.com');
+INSERT INTO Customers VALUES (9, 'Elijah', '479-345-6659', 'elijah@mail.com');
+INSERT INTO Customers VALUES (10, 'Jonah', '479-345-9923', 'jonah@mail.com');
 -- Insert furniture
+
 INSERT INTO Furniture VALUES (101, 'Chair', 'modern', 49.99);
 INSERT INTO Furniture VALUES (102, 'Table', 'rustic', 199.50);
 INSERT INTO Furniture VALUES (103, 'Sofa', 'traditional', 599.00);
+INSERT INTO Furniture VALUES (104, 'Chair', 'traditional', 49.99);
+INSERT INTO Furniture VALUES (105, 'Chair', 'rustic', 49.99);
+INSERT INTO Furniture VALUES (106, 'Sofa', 'traditional', 599.00);
+INSERT INTO Furniture VALUES (107, 'Sofa', 'traditional', 599.00);
+INSERT INTO Furniture VALUES (108, 'Sofa', 'traditional', 599.00);
+INSERT INTO Furniture VALUES (109, 'Sofa', 'traditional', 599.00);
+INSERT INTO Furniture VALUES (110, 'Sofa', 'traditional', 599.00);
 -- Insert rentals 
 INSERT INTO Rentals VALUES (1, 101, TO_DATE('2025-06-20', 'YYYY-MM-DD'), SYSDATE);
 INSERT INTO Rentals VALUES (2, 102, TO_DATE('2025-08-02', 'YYYY-MM-DD'), TO_DATE('2025-09-02', 'YYYY-MM-DD'));

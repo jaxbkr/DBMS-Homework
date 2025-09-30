@@ -21,16 +21,18 @@ RENTALS      TABLE
 
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
- C_ID                                               NUMBER
- F_ID                                               NUMBER
+ C_ID                                      NOT NULL NUMBER
+ F_ID                                      NOT NULL NUMBER
  CK_OUT_DATE                               NOT NULL DATE
  RET_DATE                                           DATE
 
 
 OWNER        TABLE_NAME   PRIMARY_KEY  CONSTRAINT_NAME                          
 ------------ ------------ ------------ ------------------------------           
-DBCLASS2     FURNITURE    F_ID         SYS_C007477                              
-DBCLASS2     CUSTOMERS    C_ID         SYS_C007479                              
+DBCLASS2     FURNITURE    F_ID         SYS_C008262                              
+DBCLASS2     CUSTOMERS    C_ID         SYS_C008264                              
+DBCLASS2     RENTALS      C_ID         PK_RENTALS                               
+DBCLASS2     RENTALS      F_ID         PK_RENTALS                               
 
 
 OWNER        TABLE_NAME   FOREIGN_KEY  REFERRING_TABLE PRIMARY_KEY              
@@ -42,10 +44,14 @@ DBCLASS2     RENTALS      F_ID         FURNITURE       F_ID
 OWNER        TABLE_NAME   SEARCH_CONDITION                                      
 ------------ ------------ ---------------------------------------------         
 DBCLASS2     RENTALS      "CK_OUT_DATE" IS NOT NULL                             
+DBCLASS2     RENTALS      "F_ID" IS NOT NULL                                    
+DBCLASS2     RENTALS      "C_ID" IS NOT NULL                                    
 DBCLASS2     CUSTOMERS    "NAME" IS NOT NULL                                    
 DBCLASS2     FURNITURE    "CATEGORY" IS NOT NULL                                
 DBCLASS2     FURNITURE    style IN ('modern', 'rustic', 'traditional')          
 DBCLASS2     FURNITURE    "PRICE" IS NOT NULL                                   
+
+7 rows selected.
 
 
       C_ID NAME       PHONE         EMAIL                                       
@@ -53,6 +59,13 @@ DBCLASS2     FURNITURE    "PRICE" IS NOT NULL
          1 Alice      479-123-4567  alice@mail.com                              
          2 Bob        479-234-5678  bob@mail.com                                
          3 Carol      479-345-6789  carol@mail.com                              
+         5 David      479-345-6589  david@mail.com                              
+         6 Saul       479-375-6789  saul@mail.com                               
+         8 Daniel     479-345-6439  daniel@mail.com                             
+         9 Elijah     479-345-6659  elijah@mail.com                             
+        10 Jonah      479-345-9923  jonah@mail.com                              
+
+8 rows selected.
 
 
       F_ID CATEGORY             STYLE                PRICE                      
@@ -60,11 +73,20 @@ DBCLASS2     FURNITURE    "PRICE" IS NOT NULL
        101 Chair                modern               49.99                      
        102 Table                rustic               199.5                      
        103 Sofa                 traditional            599                      
+       104 Chair                traditional          49.99                      
+       105 Chair                rustic               49.99                      
+       106 Sofa                 traditional            599                      
+       107 Sofa                 traditional            599                      
+       108 Sofa                 traditional            599                      
+       109 Sofa                 traditional            599                      
+       110 Sofa                 traditional            599                      
+
+10 rows selected.
 
 
       C_ID       F_ID CK_OUT_DA RET_DATE                                        
 ---------- ---------- --------- ---------                                       
-         1        101 20-JUN-25 13-SEP-25                                       
+         1        101 20-JUN-25 25-SEP-25                                       
          2        102 02-AUG-25 02-SEP-25                                       
-         3        103 13-SEP-25                                                 
+         3        103 25-SEP-25                                                 
 
