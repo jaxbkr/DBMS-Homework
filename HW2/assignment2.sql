@@ -10,3 +10,30 @@ SELECT AVG(price) AS avg_price
 FROM Furniture
 WHERE style NOT IN ('rustic', 'traditional');
 
+SELECT DISTINCT Customers.name
+FROM Customers 
+WHERE Customers.c_id IN (
+  SELECT Rentals.c_id
+  FROM Rentals 
+  WHERE Rentals.ret_date IS NULL
+);
+
+SELECT DISTINCT Furniture.f_id, Rentals.ck_out_date
+FROM Furniture
+WHERE Furniture.price = (
+  SELECT MAX(price)
+  FROM Furniture
+)
+AND Furniture.f_id IN (
+  SELECT Rentals.f_id
+  FROM Rentals
+);
+
+SELECT COUNT(*) AS gmail_users
+FROM Customers
+WHERE email LIKE '%gmail.com'
+AND c_id IN (
+  SELECT Rentals.c_id
+  FROM Rentals
+);
+
