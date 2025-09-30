@@ -40,12 +40,12 @@ CREATE TABLE Rentals (
 INSERT INTO Customers VALUES (1, 'Alice', '479-123-4567', 'alice@gmail.com');
 INSERT INTO Customers VALUES (2, 'Bob', '479-234-5678', 'bob@outlook.com');
 INSERT INTO Customers VALUES (3, 'Carol', '479-345-6789', 'carol@outlook.com');
-INSERT INTO Customers VALUES (4, 'Jackson', '479-345-4789', 'jackson@hotmail.com');
+INSERT INTO Customers VALUES (4, 'Jackson', '479-345-4789', 'jack@outlook.com');
 INSERT INTO Customers VALUES (5, 'David', '479-345-6589', 'david@gmail.com');
 INSERT INTO Customers VALUES (6, 'Saul', '479-375-6789', 'saul@gmail.com');
-INSERT INTO Customers VALUES (7, 'Solomon', '479-333-6789', 'solomon@gmail.com');
-INSERT INTO Customers VALUES (8, 'Daniel', '479-345-6439', 'daniel@yahoo.com');
-INSERT INTO Customers VALUES (9, 'Elijah', '479-345-6659', 'elijah@hotmail.com');
+INSERT INTO Customers VALUES (7, 'Solomon', '479-333-6789', 'omon@gmail.com');
+INSERT INTO Customers VALUES (8, 'Daniel', '479-345-6439', 'dani@gmail.com');
+INSERT INTO Customers VALUES (9, 'Elijah', '479-345-6659', 'eli@yahoo.com');
 INSERT INTO Customers VALUES (10, 'Jonah', '479-345-9923', 'jonah@yahoo.com');
 -- Insert furniture
 INSERT INTO Furniture VALUES (101, 'Chair', 'modern', 49.99);
