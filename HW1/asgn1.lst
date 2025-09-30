@@ -29,8 +29,8 @@ RENTALS      TABLE
 
 OWNER        TABLE_NAME   PRIMARY_KEY  CONSTRAINT_NAME                          
 ------------ ------------ ------------ ------------------------------           
-DBCLASS2     FURNITURE    F_ID         SYS_C008262                              
-DBCLASS2     CUSTOMERS    C_ID         SYS_C008264                              
+DBCLASS2     FURNITURE    F_ID         SYS_C008363                              
+DBCLASS2     CUSTOMERS    C_ID         SYS_C008365                              
 DBCLASS2     RENTALS      C_ID         PK_RENTALS                               
 DBCLASS2     RENTALS      F_ID         PK_RENTALS                               
 
@@ -56,37 +56,47 @@ DBCLASS2     FURNITURE    "PRICE" IS NOT NULL
 
       C_ID NAME       PHONE         EMAIL                                       
 ---------- ---------- ------------- ---------------                             
-         1 Alice      479-123-4567  alice@mail.com                              
-         2 Bob        479-234-5678  bob@mail.com                                
-         3 Carol      479-345-6789  carol@mail.com                              
-         5 David      479-345-6589  david@mail.com                              
-         6 Saul       479-375-6789  saul@mail.com                               
-         8 Daniel     479-345-6439  daniel@mail.com                             
-         9 Elijah     479-345-6659  elijah@mail.com                             
-        10 Jonah      479-345-9923  jonah@mail.com                              
+         1 Alice      479-123-4567  alice@gmail.com                             
+         2 Bob        479-234-5678  bob@outlook.com                             
+         3 Carol      479-345-6789  carol@gmail.com                             
+         4 Jackson    479-345-4789  jack@dsl.com                                
+         5 David      479-345-6589  david@gmail.com                             
+         6 Saul       479-375-6789  saul@gmail.com                              
+         7 Solomon    479-333-6789  omon@gmail.com                              
+         8 Daniel     479-345-6439  dani@gmail.com                              
+         9 Elijah     479-345-6659  eli@yahoo.com                               
+        10 Jonah      479-345-9923  jonah@yahoo.com                             
 
-8 rows selected.
+10 rows selected.
 
 
       F_ID CATEGORY             STYLE                PRICE                      
 ---------- -------------------- --------------- ----------                      
        101 Chair                modern               49.99                      
-       102 Table                rustic               199.5                      
+       102 Table                rustic              199.99                      
        103 Sofa                 traditional            599                      
-       104 Chair                traditional          49.99                      
-       105 Chair                rustic               49.99                      
-       106 Sofa                 traditional            599                      
-       107 Sofa                 traditional            599                      
-       108 Sofa                 traditional            599                      
-       109 Sofa                 traditional            599                      
-       110 Sofa                 traditional            599                      
+       104 Chair                traditional          44.99                      
+       105 Table                modern              199.99                      
+       106 Sofa                 rustic                 599                      
+       107 Chair                rustic                  40                      
+       108 Table                traditional            185                      
+       109 Sofa                 modern                 640                      
+       110 Lamp                 traditional             35                      
 
 10 rows selected.
 
 
       C_ID       F_ID CK_OUT_DA RET_DATE                                        
 ---------- ---------- --------- ---------                                       
-         1        101 20-JUN-25 25-SEP-25                                       
+         1        101 20-JUN-25 30-SEP-25                                       
          2        102 02-AUG-25 02-SEP-25                                       
-         3        103 25-SEP-25                                                 
+         3        103 30-SEP-25                                                 
+         4        104 15-JUL-25 15-AUG-25                                       
+         5        105 25-JUN-25 25-JUL-25                                       
+         6        106 30-SEP-25                                                 
+         7        107 10-AUG-25 10-SEP-25                                       
+         9        109 30-JUN-25 30-JUL-25                                       
+        10        110 30-SEP-25                                                 
+
+9 rows selected.
 
