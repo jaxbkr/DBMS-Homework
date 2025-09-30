@@ -58,8 +58,6 @@ INSERT INTO Furniture VALUES (107, 'Chair', 'rustic', 40.00);
 INSERT INTO Furniture VALUES (108, 'Table', 'traditional', 185.00);
 INSERT INTO Furniture VALUES (109, 'Sofa', 'modern', 640.00);
 INSERT INTO Furniture VALUES (110, 'Lamp', 'traditional', 35.00);
-INSERT INTO Furniture VALUES (111, 'Lamp', 'modern', 30.00);
-INSERT INTO Furniture VALUES (112, 'Lamp', 'rustic', 25.00);
 -- Insert rentals 
 INSERT INTO Rentals VALUES (1, 101, TO_DATE('2025-06-20', 'YYYY-MM-DD'), SYSDATE);
 INSERT INTO Rentals VALUES (2, 102, TO_DATE('2025-08-02', 'YYYY-MM-DD'), TO_DATE('2025-09-02', 'YYYY-MM-DD'));
